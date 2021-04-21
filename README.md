@@ -1,2 +1,2 @@
 # TheFabulousPika.github.io
- TheFabulousPika's GitHub Page
+ <a href="https://TheFabulousPika.github.io">TheFabulousPika.github.io</a>
