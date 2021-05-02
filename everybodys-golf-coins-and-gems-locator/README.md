@@ -2,6 +2,8 @@
 
 <img src="readme/egbanner.jpg" />
 
+[日本語で読む](README.jp.md)
+
 ## About
 A tool for locating the holes that coins and gems appear on for each online golf course in the PS4 game <a href="https://store.playstation.com/en-us/product/UP9000-CUSA04687_00-EVERYBODYSGOLFUS" target="_blank">Everybody's Golf</a>.
 
@@ -16,6 +18,13 @@ Game items such as coins, gems, special golf balls, and warp medals will spawn i
 
 <p align=center><img src="readme/eglogic.png" /></p>
 
-* The item hole number will progress by 2 when moving down the courses as they are listed on the course selection screen. If adding 2 to the previous item hole number will place the hole number over the maximum for the map type (i.e. 9 for "Out" and 18 for "In"), the count will loop back to the beginning with the excess being carried over.
+* The item hole number will progress by 2 when moving down the courses as they are listed on the course selection screen. When adding 2 to the previous item hole number places it over the maximum for the map type (i.e. 9 for "Out" and 18 for "In"), the count will loop back to the beginning with the excess being carried over.
 
-* The game keeps track of time using Golf Island Time, which is the same as GMT. Lucky Chance is triggered at the top of the hour every two hours. Upon day change, maps will be reinitialized and the item hole will move to the next hole on each map.
+* Events are scheduled in the game according to Golf Island Time, which is the same as GMT. Lucky Chance is triggered at the top of the hour every two hours. Upon day change, maps will be reinitialized and the item hole will move to the next hole on each map.
+
+### Limitations
+* From time to time the item hole progression logic will be disrupted by prolonged server maintenance or other factors. In such cases, this tool can be resynchronized by updating the item hole number and Golf Island date found on L7-L8 of index.js:
+```
+L7 const eagleCityOutItemHoleNumOnSyncDate = 4;
+L8 const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
+```
