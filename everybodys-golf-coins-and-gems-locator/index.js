@@ -4,8 +4,8 @@
 //const eagleCityOutItemHoleNumOnSyncDate = 4;
 //const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
 //Update accordingly
-const eagleCityOutItemHoleNumOnSyncDate = 4;
-const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2021,04,02));
+const eagleCityOutItemHoleNumOnSyncDate = 1;
+const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2021,07,08));
 
 //Calculates the number of days passed since last synchronization
 function getDaysPassed() {
